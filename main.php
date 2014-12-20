@@ -1,6 +1,4 @@
-<?
-
-// main.php
+<?php
 
 require('config.php');
 require('HttpPost.class.php');
@@ -21,8 +19,7 @@ if(isset($_GET['code'])) {
         "client_secret" => $oauth2_secret,
         "grant_type" => "authorization_code",
         "code" => $code,
-        "redirect_uri" => $oauth2_redirect      
-                
+        "redirect_uri" => $oauth2_redirect            
     );
  
 	// build a new HTTP POST request
@@ -36,8 +33,6 @@ if(isset($_GET['code'])) {
     // construct url for user information
     $user_url = 'https://account.lab.fi-ware.org/user?access_token=' . $responseObj->access_token ;
 
-    //echo "$user_url";
-
     $ch = curl_init($user_url);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     curl_setopt($ch, CURLOPT_HEADER, 0);
@@ -45,13 +40,30 @@ if(isset($_GET['code'])) {
 
     $userObj = json_decode($user_info);
 
-    echo "$userObj->id";
-    echo "$userObj->displayName";
-    echo "$userObj->email";
-
     curl_close($ch);
 
 }
 
-
 ?>
+
+<!DOCTYPE html>
+<html> 
+<body>
+
+<head>
+<link rel="stylesheet" type="text/css" href="main.css">
+</head>
+
+<div>
+    <?php
+    echo " Id : $userObj->id";
+    echo '<br/>';
+    echo "Name : $userObj->displayName";
+    echo '<br/>';
+    echo "Email : $userObj->email";
+    ?>
+</div>
+
+
+</body>
+</html>

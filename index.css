@@ -1,10 +1,18 @@
 body
 {   
-    background-color: #6c6a7c
+    background-image: url('darkwood.jpg');
+    background-size:cover;
 }
 
-.wrapper {
-    text-align: center;
+div {
+    width: 200px;
+    height: 100px;
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
 }
 
 .animate
@@ -19,7 +27,7 @@ body
     
     padding: 10px 40px;
     margin: 0px 10px 10px 0px;
-    border-radius: 10px;
+    border-radius: 30px;
     font-family: 'Pacifico';
     font-size: 25px;
     color: #FFF;
