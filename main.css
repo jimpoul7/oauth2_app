@@ -4,9 +4,11 @@ body
     background-size:cover;
 }
 
-div {
+div 
+{
+
     width: 200px;
-    height: 200px;
+    height: 100px;
     position: absolute;
     top:0;
     bottom: 0;

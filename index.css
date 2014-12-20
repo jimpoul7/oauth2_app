@@ -1,10 +1,13 @@
 body
-{   
+{
+
     background-image: url('darkwood.jpg');
     background-size:cover;
 }
 
-div {
+div 
+{
+
     width: 200px;
     height: 100px;
     position: absolute;
